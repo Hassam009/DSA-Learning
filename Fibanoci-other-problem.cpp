@@ -119,25 +119,49 @@ using namespace std;
 
 // Below code is to find sum of given numbers
 
+// int main()
+// {
+//     int input;
+//     cout << "Enter any number " << endl;
+//     cin >> input;
+//     cout << "Your Number is " << input << endl;
+//     int sum = 0;
+// if(input>0){
+// while (input > 0)
+//     {
+//         sum = sum + input % 10;
+//         input /= 10;
+//     }
+
+//     cout<<"Your sum is "<<sum<<endl;
+// }
+
+// if(input<=0){
+//     cout<<"You cant find Sum "<<endl;
+// }
+
+// }
+
 int main()
 {
-    int input;
-    cout << "Enter any number " << endl;
-    cin >> input;
-    cout << "Your Number is " << input << endl;
-    int sum = 0;
-if(input>0){
-while (input > 0)
+    int arr[] = {1, 2, 3, 4, 5, 1, 2, 3, 5};
+    int sz = sizeof(arr) / sizeof(arr[0]);
+    for (int i = 0; i < sz; i++)
     {
-        sum = sum + input % 10;
-        input /= 10;
+        bool isUnique = true;
+        for (int j = 0; j < sz; j++)
+        {
+            if (i != j && arr[i] == arr[j])
+            {
+                isUnique = false;
+                break;
+            }
+        }
+
+        if(isUnique){
+            cout<<"Unique Elements is "<<arr[i]<<endl;
+        }
+        
     }
-
-    cout<<"Your sum is "<<sum<<endl;
-}
-
-if(input<=0){
-    cout<<"You cant find Sum "<<endl;
-}
-    
+    return 0;
 }
