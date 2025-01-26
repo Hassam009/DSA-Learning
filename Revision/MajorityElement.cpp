@@ -1,0 +1,20 @@
+#include <unordered_map>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        unordered_map<int, int> freq;
+        int n = nums.size();
+        
+        for (int num : nums) {
+            freq[num]++;
+            if (freq[num] > n / 2) {
+                return num;
+            }
+        }
+        
+        return -1; // This line is never reached because a majority element always exists.
+    }
+};
